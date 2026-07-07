@@ -1,0 +1,98 @@
+<h2 class="tabla-titulo" id="precios">SERVICIOS Y PRECIOS</h2>
+<table class="tabla-servicios">
+  <thead>
+    <tr>
+      <th>Servicio / Producto</th>
+      <th>Imagen</th>
+      <th>Precio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="servicio-tabla">Afinación Mayor</td>
+      <td><img src="imagenes/WhatsApp Image 2026-07-06 at 7.23.45 PM.jpeg" alt="Afinación" onclick="abrirModal(this.src)"></td>
+      <td class="precio">$1,800 MXN</td>
+    </tr>
+    <tr>
+      <td class="servicio-tabla">Cambio de Aceite Sintético</td>
+      <td><img src="imagenes/1.jpg" alt="Aceite" onclick="abrirModal(this.src)"></td>
+      <td class="precio">$1,200 MXN</td>
+    </tr>
+    <tr>
+      <td class="servicio-tabla">Diagnóstico por Escáner</td>
+      <td><img src="imagenes/2.png" alt="Scanner" onclick="abrirModal(this.src)"></td>
+      <td class="precio">$400 MXN</td>
+    </tr>
+    <tr>
+      <td class="servicio-tabla">Batería LTH 47A</td>
+      <td><img src="imagenes/photo-1606220838315-056192d5e927.jpg" alt="Batería" onclick="abrirModal(this.src)"></td>
+      <td class="precio">$2,300 MXN</td>
+    </tr>
+    <tr>
+      <td class="servicio-tabla">Alineación y Balanceo</td>
+      <td><img src="imagenes/5.jpg" alt="Alineación" onclick="abrirModal(this.src)"></td>
+      <td class="precio">$650 MXN</td>
+    </tr>
+  </tbody>
+</table>
+<a href="index.html">Volver al inicio</a>
+<style>
+    .tabla-titulo {
+  text-align: center;
+  color: #ff6b00;
+  margin: 40px 0 20px;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.tabla-servicios {
+  width: 100%;
+  margin: 0 auto 30px;
+  border-collapse: collapse;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tabla-servicios th, 
+.tabla-servicios td {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+}
+
+.tabla-servicios th {
+  background-color: #ff6b00;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.tabla-servicios td img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid #ff6b00;
+  transition: transform 0.2s;
+}
+
+.tabla-servicios td img:hover {
+  transform: scale(1.1);
+}
+
+.servicio-tabla {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+}
+
+.precio {
+  font-weight: bold;
+  color: #4CAF50;
+  font-size: 1.1rem;
+}
+
+</style>

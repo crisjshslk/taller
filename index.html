@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+  <title>Taller Mecánico El Rayo - La chispa que enciende tu motor</title>
+  <script src="https://kit.fontawesome.com/tu_codigo.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <i class="fa-solid fa-wrench"></i>
+      <i class="fa-solid fa-bolt" style="color: #f1c40f;"></i>
+      <h1>Taller Mecánico El Rayo</h1>
+    </div>
+    <p class="eslogan">"La chispa que enciende tu motor"</p>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="precios.html">Precios</a>
+      <a href="nostros.html">Nosotros</a>
+      <a href="#horario">Horario</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="form.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Carrusel -->
+  <div class="carousel">
+    <div class="carousel-inner" id="carouselInner">
+      <div class="carousel-item">
+        <img src="imagenes/WhatsApp Image 2026-07-06 at 7.23.58 PM (1).jpeg" alt="Mecánico revisando motor">
+      </div>
+      <div class="carousel-item">
+        <img src="imagenes/WhatsApp Image 2026-07-06 at 7.31.08 PM.jpeg" alt="Cambio de llantas">
+      </div>
+    </div>
+    <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+    <div class="carousel-indicators" id="indicators"></div>
+  </div>
+
+  <!-- HORARIO -->
+  <section class="card" id="horario">
+    <h2>🕒 Horario de Atención</h2>
+    <p><strong>Lunes a Viernes:</strong> 9:00 AM - 8:00 PM</p>
+    <p><strong>Sábado:</strong> 9:00 AM - 7:00 PM</p>
+    <p><strong>Domingo:</strong> 10:00 AM - 4:00 PM</p>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <div class="card" id="ubicacion">
+    <h2>📍 Ubicación</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.72380601557!2d-99.58251782244184!3d19.9781143089201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d24a29915e9abb%3A0x8558662ae21d2b40!2s54256%20Agua%20Escondida%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1781308421135!5m2!1ses-419!2smx" 
+      width="100%" 
+      height="400" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+    <p>Tercera manzana Agua Escondida Jilotepec México.</p>
+    <a href="https://www.google.com/maps/place/Tercera+manzana+Agua+Escondida+Jilotepec+México" 
+       target="_blank" 
+       class="btn-mapa">
+      Ver en Google Maps
+    </a>
+  </div>
+
+  <!-- MODAL -->
+  <div id="miModal" onclick="cerrarModal()">
+    <span class="cerrar">&times;</span>
+    <img id="imgGrande">
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Taller Mecánico El Rayo - "La chispa que enciende tu motor"</p>
+  </footer>
+
+  <script>
+    // Carrusel
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+    const indicatorsContainer = document.getElementById('indicators');
+    const totalSlides = slides.length;
+
+    for (let i = 0; i < totalSlides; i++) {
+      const indicator = document.createElement('div');
+      indicator.classList.add('indicator');
+      if (i === 0) indicator.classList.add('active');
+      indicator.onclick = () => goToSlide(i);
+      indicatorsContainer.appendChild(indicator);
+    }
+
+    const indicators = document.querySelectorAll('.indicator');
+
+    function updateCarousel() {
+      document.getElementById('carouselInner').style.transform = `translateX(-${slideIndex * 100}%)`;
+      indicators.forEach((ind, i) => {
+        ind.classList.toggle('active', i === slideIndex);
+      });
+    }
+
+    function moveSlide(direction) {
+      slideIndex = (slideIndex + direction + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      slideIndex = index;
+      updateCarousel();
+    }
+
+    setInterval(() => {
+      moveSlide(1);
+    }, 4000);
+
+    // Modal
+    function abrirModal(src) {
+      document.getElementById("miModal").style.display = "block";
+      document.getElementById("imgGrande").src = src;
+    }
+    function cerrarModal() {
+      document.getElementById("miModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>

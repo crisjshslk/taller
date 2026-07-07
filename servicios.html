@@ -1,0 +1,62 @@
+<div class="card" id="servicios">
+  <h2>Servicios</h2>
+  <div class="servicios">
+    <button class="servicio" onclick="abrirModal('imagen1.jpg')">
+      <h3><i class="fa-solid fa-gears"></i> Ajustes de Motor</h3>
+    </button>
+    <button class="servicio" onclick="abrirModal('imagen2.jpg')">
+      <h3><i class="fa-solid fa-car-brake"></i> Frenos</h3>
+    </button>
+    <button class="servicio" onclick="abrirModal('imagen3.jpg')">
+      <h3><i class="fa-solid fa-car-side"></i> Suspensión</h3>
+    </button>
+    <button class="servicio" onclick="abrirModal('imagen4.jpg')">
+      <h3><i class="fa-solid fa-spray-can"></i> Pintura</h3>
+    </button>
+    <button class="servicio" onclick="abrirModal('imagen5.jpg')">
+      <h3><i class="fa-solid fa-soap"></i> Limpieza</h3>
+    </button>
+    <button class="servicio" onclick="abrirModal('imagen6.jpg')">
+      <h3><i class="fa-solid fa-laptop-code"></i> Diagnóstico</h3>
+    </button>
+  </div>
+</div>
+<a href="index.html">Volver al inicio</a>
+
+<style>
+/* Contenedor de servicios */
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Botones de servicio */
+.servicio {
+  background: #22d312;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.servicio:hover {
+  background: #1aab0e;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.servicio h3 {
+  color: #1a1a1a;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.servicio i {
+  color: #f17f9b;
+  margin-right: 8px;
+}
+</style>
